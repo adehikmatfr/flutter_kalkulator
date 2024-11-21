@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kalkulator/screens/bmi_result_screen.dart';
 import '../models/bmi_calculator_model.dart';
 import '../services/bmi_calculator_service.dart';
 
@@ -28,6 +29,14 @@ class BMICalculatorScreenState extends State<BMICalculatorScreen> {
       _bmiService.appendWeightValue(_weightController.text);
       _bmiService.calculate();
     });
+
+    // Navigate to the BMIResultScreen and pass the calculated BMI result
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => BMIResultScreen(bmiCalculatorModel: _model),
+      ),
+    );
   }
 
   void _clear() {
@@ -86,12 +95,6 @@ class BMICalculatorScreenState extends State<BMICalculatorScreen> {
                 'Calculate BMI',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              _model.displayValue,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
             ElevatedButton(

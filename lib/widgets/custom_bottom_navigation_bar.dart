@@ -24,6 +24,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
           icon: Icon(Icons.fitness_center_outlined),
           label: 'BMI Calculator',
         ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.pan_tool_alt_outlined),
+          label: 'Memo',
+        ),
       ],
       selectedItemColor: Colors.blueAccent,
       unselectedItemColor: Colors.grey,

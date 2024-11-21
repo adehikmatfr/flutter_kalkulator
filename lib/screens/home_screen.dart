@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kalkulator/screens/memo_screen.dart';
 import '../widgets/custom_bottom_navigation_bar.dart';
 import './bmi_calculator_screen.dart';
 import './calculator_screen.dart';
@@ -16,6 +17,7 @@ class HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const CalculatorScreen(),
     const BMICalculatorScreen(),
+    const MemoScreen(),
   ];
 
   void _onItemTapped(int index) {
